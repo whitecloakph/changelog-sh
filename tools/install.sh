@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -n "$CHANGE" ]; then
   CHANGE=~/.change
 fi
@@ -10,6 +12,7 @@ fi
 
 git clone https://github.com/whitecloakph/changelog-sh.git $CHANGE
 
-echo 'Entering sudo'
-sudo cp $CHANGE/changelog.sh /usr/local/bin/change
-sudo chmod +x /usr/local/bin/change 
+echo ""
+echo "Entering sudo"
+sudo chmod +x $CHANGE/changelog.sh
+sudo ln -s $CHANGE/changelog.sh /usr/local/bin/change
