@@ -19,3 +19,24 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/whitecloakph/changelog-sh/
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/whitecloakph/changelog-sh/master/tools/install.sh)"
 ```
+
+
+### Basic Usage
+
+#### Init
+
+```shell
+change init
+```
+
+#### New
+
+```shell
+change new {type_of_change} {message}
+```
+
+#### Release
+
+```shell
+change release {version}
+```
