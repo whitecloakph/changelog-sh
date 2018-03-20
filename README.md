@@ -1,5 +1,7 @@
 # Changelog.sh
 
+Changelog.sh is a tool to keep a changelog without conflicts. It supports rendering your changelog into standard [keep a change log](https://keepachangelog.com) format.
+
 ## Getting Started
 
 ### Basic Installation
@@ -15,5 +17,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/whitecloakph/changelog-sh/
 #### via wget
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/whitecloakph/changelog-sh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/whitecloakph/changelog-sh/master/tools/install.sh)"
 ```
