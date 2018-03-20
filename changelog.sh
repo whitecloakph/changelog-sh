@@ -1,9 +1,9 @@
 #!/bin/bash
 
-source changelog-init.sh
-source changelog-new.sh
-source changelog-render.sh
-source changelog-release.sh
+source ~/.change/changelog-init.sh
+source ~/.change/changelog-new.sh
+source ~/.change/changelog-render.sh
+source ~/.change/changelog-release.sh
 
 function changelog {
   error="Invalid command. Valid commands:
