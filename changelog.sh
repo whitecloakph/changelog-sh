@@ -6,16 +6,15 @@ source changelog-render.sh
 source changelog-release.sh
 
 function changelog {
-  error="
-  Invalid command. Valid commands:\n
-  - init\n
-  - new\n
-  - render\n
+  error="Invalid command. Valid commands:
+  - init
+  - new
+  - render
   - release
-  "
+"
 
   if [ "$#" -eq 0 ]; then
-    echo $error
+    printf "$error"
     return
   fi
 
