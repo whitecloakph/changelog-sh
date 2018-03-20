@@ -1,6 +1,6 @@
 # Changelog.sh
 
-Changelog.sh is a tool to keep a changelog without conflicts. It supports rendering your changelog into standard [keep a change log](https://keepachangelog.com) format.
+Changelog.sh is a tool to keep a changelog without conflicts. It supports rendering your changelog into a standard [keepachangelog](https://keepachangelog.com) format.
 
 ## Getting Started
 
