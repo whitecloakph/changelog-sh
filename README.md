@@ -23,19 +23,19 @@ sh -c "$(wget https://raw.githubusercontent.com/whitecloakph/changelog-sh/master
 
 ### Basic Usage
 
-#### Init
+#### Initialize
 
 ```shell
 change init
 ```
 
-#### New
+#### Add new change
 
 ```shell
 change new {type_of_change} {message}
 ```
 
-#### Release
+#### Release changes
 
 ```shell
 change release {version}
