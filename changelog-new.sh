@@ -2,7 +2,7 @@
 
 function new {
 
-  timestamp=$(date +"%Y%m%d%H%M%S.%3N")
+  timestamp=$(date +"%Y%m%d%H%M%S")
   type='fixed'
 
   if [ ! -d 'changelog' ]; then
