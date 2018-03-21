@@ -19,22 +19,22 @@ function changelog {
   fi
 
   if [ $1 == 'init' ]; then
-    init ${@:1}
+    init ${@:2}
     return
   fi
 
   if [ $1 == 'new' ]; then
-    new ${@:1}
+    new ${@:2}
     return
   fi
 
   if [ $1 == 'preview' ]; then
-    preview ${@:1}
+    preview ${@:2}
     return
   fi
 
   if [ $1 == 'release' ]; then
-    release ${@:1}
+    release ${@:2}
     return
   fi
 
