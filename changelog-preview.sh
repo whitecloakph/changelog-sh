@@ -6,11 +6,21 @@ function title {
 }
 
 function preview {
+  version="Unreleased"
+  if [ "$#" -gt 0 ]; then
+    version=$1
+  fi
+
+  if [ ! -d "changelog/$version" ]; then
+    printf "$version not found.\n"
+    return
+  fi
+
   echo "# What's new?"
   echo ""
-  echo "## [Unreleased]"
+  echo "## [$version]"
 
-  for dir in changelog/unreleased/*; do
+  for dir in changelog/$version/*; do
     if [ "$(ls -A $dir)" ]; then
       current=$(echo $dir | grep -o '[^/]*$')
       echo "###" $(title $current)

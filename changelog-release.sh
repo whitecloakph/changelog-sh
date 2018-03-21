@@ -1,11 +1,18 @@
 #!/bin/bash
+source ~/.change/changelog-preview.sh
 
 function release {
 
-  if [ "$#" -lt 2 ]; then
+  if [ ! -d "changelog/unreleased/" ]; then
+    printf "Nothing to release.\n"
+    return
+  fi
+
+  if [ "$#" -lt 1 ]; then
     echo "Version is required"
     return
   fi
 
-  mv 'changelog/unreleased' "changelog/$2"
+  mv 'changelog/unreleased' "changelog/$1"
+  preview $1
 }

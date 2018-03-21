@@ -13,16 +13,16 @@ function new {
     mkdir 'changelog/unreleased'
   fi
 
-  if [ "$#" -ge 2 ]; then
-    type=$2
+  if [ "$#" -ge 1 ]; then
+    type=$1
   fi
 
   if [ ! -d "changelog/unreleased/$type" ]; then
     mkdir "changelog/unreleased/$type"
   fi
 
-  if [ "$#" -ge 3 ]; then
-    echo ${@:3} > "changelog/unreleased/$type/$timestamp"
+  if [ "$#" -ge 2 ]; then
+    echo ${@:2} > "changelog/unreleased/$type/$timestamp"
   fi
 
 }
