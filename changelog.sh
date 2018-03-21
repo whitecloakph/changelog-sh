@@ -6,15 +6,18 @@ source ~/.change/changelog-preview.sh
 source ~/.change/changelog-release.sh
 
 function changelog {
-  error="Invalid command. Valid commands:
-  - init
-  - new
-  - preview
-  - release
-"
+  usage="usage: change <command> [<args>]
+  
+  These are the available commands:
+
+  init      Initialize changelog in current directory
+  new       Register new change in the changelog
+  preview   Preview the changelog in Markdown format
+  release   Release the changes for the current version
+  "
 
   if [ "$#" -eq 0 ]; then
-    printf "$error"
+    printf "$usage"
     return
   fi
 
@@ -38,7 +41,8 @@ function changelog {
     return
   fi
 
-  printf "$error"
+  printf "Invalid command."
+	printf "$usage"
 }
 
 changelog $@
