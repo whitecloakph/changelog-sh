@@ -35,12 +35,6 @@ change init
 change new {type_of_change} {message}
 ```
 
-#### Preview changelog in Markdown format
-
-```shell
-change preview
-```
-
 #### Release changes
 
 ```shell
