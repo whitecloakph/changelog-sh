@@ -20,19 +20,25 @@ function changelog {
 
   if [ $1 == 'init' ]; then
     init ${@:1}
+    return
   fi
 
   if [ $1 == 'new' ]; then
     new ${@:1}
+    return
   fi
 
   if [ $1 == 'render' ]; then
     render ${@:1}
+    return
   fi
 
   if [ $1 == 'release' ]; then
     release ${@:1}
+    return
   fi
+
+  printf "$error"
 }
 
 changelog $@
