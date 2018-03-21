@@ -2,14 +2,14 @@
 
 source ~/.change/changelog-init.sh
 source ~/.change/changelog-new.sh
-source ~/.change/changelog-preview.sh
+source ~/.change/changelog-render.sh
 source ~/.change/changelog-release.sh
 
 function changelog {
   error="Invalid command. Valid commands:
   - init
   - new
-  - preview
+  - render
   - release
 "
 
@@ -28,8 +28,8 @@ function changelog {
     return
   fi
 
-  if [ $1 == 'preview' ]; then
-    preview ${@:1}
+  if [ $1 == 'render' ]; then
+    render ${@:1}
     return
   fi
 
