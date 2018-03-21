@@ -5,7 +5,7 @@ function title {
   echo $(echo ${input:0:1} | tr  '[a-z]' '[A-Z]')${input:1}
 }
 
-function render {
+function preview {
   echo "# What's new?"
   echo ""
   echo "## [Unreleased]"
