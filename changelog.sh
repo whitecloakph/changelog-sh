@@ -4,6 +4,7 @@ source ~/.change/changelog-init.sh
 source ~/.change/changelog-new.sh
 source ~/.change/changelog-preview.sh
 source ~/.change/changelog-release.sh
+source ~/.change/changelog-upgrade.sh
 
 function changelog {
   usage="usage: change <command> [<args>]
@@ -41,8 +42,13 @@ function changelog {
     return
   fi
 
+  if [ $1 == 'upgrade' ]; then
+    upgrade ${@:2}
+    return
+  fi
+
   printf "Invalid command."
-	printf "$usage"
+  printf "$usage"
 }
 
 changelog $@
