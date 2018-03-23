@@ -4,6 +4,7 @@ source ~/.change/changelog-init.sh
 source ~/.change/changelog-new.sh
 source ~/.change/changelog-preview.sh
 source ~/.change/changelog-release.sh
+source ~/.change/changelog-unrelease.sh
 
 function changelog {
   usage="usage: change <command> [<args>]
@@ -38,6 +39,11 @@ function changelog {
 
   if [ $1 == 'release' ]; then
     release ${@:2}
+    return
+  fi
+
+  if [ $1 == 'unrelease' ]; then
+    unrelease ${@:2}
     return
   fi
 
