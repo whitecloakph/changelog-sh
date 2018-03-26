@@ -1,4 +1,5 @@
 #!/bin/bash
+
 source ~/.change/changelog-preview.sh
 
 function unrelease {
@@ -21,5 +22,6 @@ function unrelease {
 
   mv changelog/$version/* changelog/unreleased/
   rm -r changelog/$version
-  preview $1
+
+  preview
 }
