@@ -5,6 +5,7 @@ source ~/.change/changelog-new.sh
 source ~/.change/changelog-preview.sh
 source ~/.change/changelog-release.sh
 source ~/.change/changelog-unrelease.sh
+source ~/.change/changelog-upgrade.sh
 
 function changelog {
   usage="usage: change <command> [<args>]
@@ -15,7 +16,8 @@ function changelog {
   new       Register new change in the changelog
   preview   Preview the changelog in Markdown format
   release   Release the changes for the current version
-  "
+  unrelease Reverts the changes from the version specified back to unreleased
+  upgrade   Pulls the latest master branch from GitHub\n"
 
   if [ "$#" -eq 0 ]; then
     printf "$usage"
@@ -47,8 +49,13 @@ function changelog {
     return
   fi
 
+  if [ $1 == 'upgrade' ]; then
+    upgrade ${@:2}
+    return
+  fi
+
   printf "Invalid command."
-	printf "$usage"
+  printf "$usage"
 }
 
 changelog $@
