@@ -2,6 +2,51 @@
 
 Changelog.sh is a tool to keep a changelog without conflicts. It supports rendering your changelog into a standard [keepachangelog](https://keepachangelog.com) format.
 
+Having a `changelog` directory looking like this:
+
+```
+changelog/
+  2.0.1/
+    added/
+      20180406201409
+    fixed/
+      20180406202703
+      20180411092409
+  2.0.0/
+    changed/
+      20180322144612
+  1.1.0/
+    added/
+      20180402183256
+  1.0.0/
+    added/
+      20180405192450
+```
+
+would yield a CHANGELOG.md that would like like this:
+
+```
+## [2.0.1]
+### Added
+- Never gonna give you up
+
+### Fixed
+- [123] Never gonna let you down
+- [124] Never gonna run around and desert you
+
+## [2.0.0]
+### Changed
+- Never gonna make you cry
+
+## [1.1.0]
+### Added
+- Never gonna say good bye
+
+## [1.0.0]
+### Added
+- Never gonna tell a lie and hurt you
+```
+
 ## Getting Started
 
 ### Basic Installation
