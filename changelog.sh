@@ -13,7 +13,7 @@ source $CHANGE/changelog-release.sh
 source $CHANGE/changelog-unrelease.sh
 source $CHANGE/changelog-upgrade.sh
 
-function _changelogsh_changelog {
+function _changelogsh_main {
   usage="usage: change <command> [<args>]
   
   These are the available commands:
@@ -64,4 +64,4 @@ function _changelogsh_changelog {
   printf "$usage"
 }
 
-_changelogsh_changelog $@
+_changelogsh_main $@

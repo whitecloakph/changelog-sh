@@ -21,5 +21,5 @@ function _changelogsh_unrelease {
   mv changelog/$version/* changelog/unreleased/
   rm -r changelog/$version
 
-  preview
+  _changelogsh_preview
 }

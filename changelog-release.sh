@@ -13,5 +13,5 @@ function _changelogsh_release {
   fi
 
   mv 'changelog/unreleased' "changelog/$1"
-  preview $1
+  _changelogsh_preview $1
 }
