@@ -1,7 +1,6 @@
 #!/bin/bash
-source ~/.change/changelog-preview.sh
 
-function release {
+function _changelogsh_release {
 
   if [ ! -d "changelog/unreleased/" ]; then
     printf "Nothing to release.\n"
@@ -14,5 +13,5 @@ function release {
   fi
 
   mv 'changelog/unreleased' "changelog/$1"
-  preview $1
+  _changelogsh_preview $1
 }

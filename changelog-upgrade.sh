@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function upgrade {
+function _changelogsh_upgrade {
   if [ ! -n "$CHANGE" ]; then
     CHANGE=~/.change
   fi

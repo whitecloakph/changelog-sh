@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source ~/.change/changelog-preview.sh
-
-function unrelease {
+function _changelogsh_unrelease {
 
   if [ "$#" -eq 0 ]; then
     echo "Version is required"
@@ -23,5 +21,5 @@ function unrelease {
   mv changelog/$version/* changelog/unreleased/
   rm -r changelog/$version
 
-  preview
+  _changelogsh_preview
 }

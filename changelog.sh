@@ -1,13 +1,19 @@
 #!/bin/bash
 
-source ~/.change/changelog-init.sh
-source ~/.change/changelog-new.sh
-source ~/.change/changelog-preview.sh
-source ~/.change/changelog-release.sh
-source ~/.change/changelog-unrelease.sh
-source ~/.change/changelog-upgrade.sh
+if [ ! -n "$CHANGE" ]; then
+  CHANGE=~/.change
+fi
 
-function changelog {
+source $CHANGE/changelog-helpers.sh
+
+source $CHANGE/changelog-init.sh
+source $CHANGE/changelog-new.sh
+source $CHANGE/changelog-preview.sh
+source $CHANGE/changelog-release.sh
+source $CHANGE/changelog-unrelease.sh
+source $CHANGE/changelog-upgrade.sh
+
+function _changelogsh_main {
   usage="usage: change <command> [<args>]
   
   These are the available commands:
@@ -25,32 +31,32 @@ function changelog {
   fi
 
   if [ $1 == 'init' ]; then
-    init ${@:2}
+    _changelogsh_init ${@:2}
     return
   fi
 
   if [ $1 == 'new' ]; then
-    new ${@:2}
+    _changelogsh_new ${@:2}
     return
   fi
 
   if [ $1 == 'preview' ]; then
-    preview ${@:2}
+    _changelogsh_preview ${@:2}
     return
   fi
 
   if [ $1 == 'release' ]; then
-    release ${@:2}
+    _changelogsh_release ${@:2}
     return
   fi
 
   if [ $1 == 'unrelease' ]; then
-    unrelease ${@:2}
+    _changelogsh_unrelease ${@:2}
     return
   fi
 
   if [ $1 == 'upgrade' ]; then
-    upgrade ${@:2}
+    _changelogsh_upgrade ${@:2}
     return
   fi
 
@@ -58,4 +64,4 @@ function changelog {
   printf "$usage"
 }
 
-changelog $@
+_changelogsh_main $@

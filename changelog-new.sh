@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function new {
+function _changelogsh_new {
 
   timestamp=$(date +"%Y%m%d%H%M%S")
   type='fixed'

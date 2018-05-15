@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function init {
+function _changelogsh_init {
   if [ ! -d 'changelog' ]; then
     mkdir 'changelog'
   fi
