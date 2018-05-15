@@ -2,6 +2,16 @@
 
 Changelog.sh is a tool to keep a changelog without conflicts. It supports rendering your changelog into a standard [keepachangelog](https://keepachangelog.com) format.
 
+## Motivation
+
+Maintaining a CHANGELOG.md is annoying because it's prone to merge conflict. Multiple developer adding line to a single file will confuse git as to which change should go first. 
+
+## Solution
+
+The solution is to create a file for each changelog entry that can be commited to git. This strategy avoid merge conflicts when multiple developers add a changelog entry.
+
+## How it works
+
 Having a `changelog` directory looking like this:
 
 ```
