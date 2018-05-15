@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source ~/.change/changelog-helpers.sh
-
-function preview {
+function _changelogsh_preview {
   version="Unreleased"
   if [ "$#" -gt 0 ]; then
     version=$1
@@ -20,7 +18,7 @@ function preview {
   for dir in changelog/$version/*; do
     if [ "$(ls -A $dir)" ]; then
       current=$(echo $dir | grep -o '[^/]*$')
-      echo "###" $(title $current)
+      echo "###" $(_changelogsh_title $current)
       for file in $dir/*; do
         echo "-" $(cat $file)
       done

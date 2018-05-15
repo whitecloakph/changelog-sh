@@ -1,7 +1,6 @@
 #!/bin/bash
-source ~/.change/changelog-preview.sh
 
-function release {
+function _changelogsh_release {
 
   if [ ! -d "changelog/unreleased/" ]; then
     printf "Nothing to release.\n"
