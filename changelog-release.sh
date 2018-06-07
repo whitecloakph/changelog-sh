@@ -12,6 +12,9 @@ function _changelogsh_release {
     return
   fi
 
-  mv 'changelog/unreleased' "changelog/$1"
+  version=$1
+  expanded=$(_changelogsh_raw_to_expanded $version)
+
+  mv 'changelog/unreleased' "changelog/$expanded"
   _changelogsh_preview $1
 }
