@@ -8,8 +8,9 @@ function _changelogsh_unrelease {
   fi
 
   version=$1
+  expanded=$(_changelogsh_raw_to_expanded $1)
 
-  if [ ! -d "changelog/$version" ]; then
+  if [ ! -d "changelog/$expanded" ]; then
     printf "$version not found.\n"
     return
   fi
@@ -18,8 +19,8 @@ function _changelogsh_unrelease {
     mkdir 'changelog/unreleased'
   fi
 
-  mv changelog/$version/* changelog/unreleased/
-  rm -r changelog/$version
+  mv changelog/$expanded/* changelog/unreleased/
+  rm -r changelog/$expanded
 
   _changelogsh_preview
 }

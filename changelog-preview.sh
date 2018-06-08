@@ -1,21 +1,26 @@
 #!/bin/bash
 
 function _changelogsh_preview {
-  version="Unreleased"
+  raw_version="Unreleased"
+  expanded="Unreleased"
   if [ "$#" -gt 0 ]; then
-    version=$1
+    raw_version=$1
   fi
 
-  if [ ! -d "changelog/$version" ]; then
-    printf "$version not found.\n"
+  if [ $raw_version != "Unreleased" ]; then
+    expanded=$(_changelogsh_raw_to_expanded $raw_version)
+  fi
+
+  if [ ! -d "changelog/$expanded" ]; then
+    printf "$raw_version not found.\n"
     return
   fi
 
   echo "# What's new?"
   echo ""
-  echo "## [$version]"
+  echo "## [$raw_version]"
 
-  for dir in changelog/$version/*; do
+  for dir in changelog/$expanded/*; do
     if [ "$(ls -A $dir)" ]; then
       current=$(echo $dir | grep -o '[^/]*$')
       echo "###" $(_changelogsh_title $current)
