@@ -19,7 +19,7 @@ function _changelogsh_release {
 
   mv 'changelog/unreleased' "changelog/$expanded"
 
-  exec > CHANGELOG.md
+  exec > $release_file
 
   echo "# What's new?"
 
