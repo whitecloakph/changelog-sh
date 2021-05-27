@@ -12,8 +12,5 @@ function _changelogsh_raw_to_expanded {
 }
 
 function _changelogsh_expanded_to_raw {
-  input=$1
-  split=($(echo $input | fold -w3))
-
-  echo $split | sed 's/^0*//g; s/ 0*/./g'
+  echo $(echo $1 | fold -w3 | sed 's/^0//g; s/^0//g;' | tr '\n' '.' | sed 's/.$//g;')
 }
