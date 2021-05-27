@@ -16,18 +16,21 @@ function _changelogsh_preview {
     return
   fi
 
-  echo "# What's new?"
+  if [ ! -n $1 ]; then
+    echo "# What's new?"
+  fi
   echo ""
   echo "## [$raw_version]"
+  echo ""
 
   for dir in changelog/$expanded/*; do
     if [ "$(ls -A $dir)" ]; then
       current=$(echo $dir | grep -o '[^/]*$')
       echo "###" $(_changelogsh_title $current)
+      echo ""
       for file in $dir/*; do
         echo "-" $(cat $file)
       done
-      echo ""
     fi
   done
 }
