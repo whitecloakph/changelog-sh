@@ -13,7 +13,5 @@ function _changelogsh_raw_to_expanded {
 
 function _changelogsh_expanded_to_raw {
   input=$1
-  split=($(echo $input | fold -w3))
-
-  echo $split | sed 's/^0*//g; s/ 0*/./g'
+  echo $input | fold -w3 | tr '\n' ' ' | sed 's/0*//g' | awk '{ if(NF=2){ $3=$2; $2=$1; $1=0 } if($3==""){ $3=0 } } {print $1 "." $2 "." $3}'
 }
